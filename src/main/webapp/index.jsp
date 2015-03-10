@@ -43,8 +43,8 @@
 	<!-- BEGIN HEADER -->
 	<div class="header">
 		<div class="container">
-			<a class="site-logo" href="index.html"><img
-				src="assets/frontend/layout/img/logos/logo-corp-red.png"
+			<a class="site-logo" href="<c:url value="/"/>"><img
+				src="assets/admin/layout/img/logo_index.png"
 				alt="Metronic FrontEnd"></a> <a href="javascript:void(0);"
 				class="mobi-toggler"><i class="fa fa-bars"></i></a>
 		</div>

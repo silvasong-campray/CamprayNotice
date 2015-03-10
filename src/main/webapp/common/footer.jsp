@@ -6,7 +6,7 @@
 	<!-- BEGIN FOOTER -->
 	<div class="page-footer">
 		<div class="page-footer-inner">
-			 2014 &copy; CampRay. 商品智能搜索平台.
+			 2014 &copy; CampRay.
 		</div>
 		<div class="page-footer-tools">
 			<span class="go-top">
