@@ -12,5 +12,7 @@
 	
 	<bean id="infoService" class="com.campraynotice.service.impl.InfoServiceImpl" autowire="byName"></bean>
 	
+	<bean id="settingService" class="com.campraynotice.service.impl.SettingServiceImpl" autowire="byName"></bean>
+	
     
 </beans>

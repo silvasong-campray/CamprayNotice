@@ -22,7 +22,15 @@ public class Info {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+    
+	public int getSort() {
+		return sort;
+	}
 
+	public void setSort(int sort) {
+		this.sort = sort;
+	}
+	
 	public String getContent() {
 		return content;
 	}
@@ -43,9 +51,13 @@ public class Info {
 	
 	private String title;
 	
+	private int sort;
+	
 	private String content;
 	
 	private long createTime;
+	
+	
 	
 	
 

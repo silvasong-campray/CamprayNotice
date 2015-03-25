@@ -1,16 +1,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.campraynotice.dto">
-	<class name="Info">
+	<class name="Setting">
 		<id name="id">
 			<generator class="native"></generator>
 		</id>
-		<property name="title"></property>
+		<property name="name"></property>
 		
-		<property name="content" length="2000"></property>
+		<property name="value"></property>
 		
-		<property name="sort"></property>
 		
-		<property name="createTime" type="java.lang.Long"></property>
 	</class>
 
 </hibernate-mapping>

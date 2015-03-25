@@ -35,6 +35,7 @@
 	<property name="mappingResources">
 	  <list>		
 	      <value>cfg/Info.hbm.xml</value>
+	      <value>cfg/Setting.hbm.xml</value>
 	  </list>
 	</property>
 	 

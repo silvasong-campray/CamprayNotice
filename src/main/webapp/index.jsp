@@ -47,7 +47,11 @@
 				src="assets/admin/layout/img/logo_index.png"
 				alt="Metronic FrontEnd"></a> <a href="javascript:void(0);"
 				class="mobi-toggler"><i class="fa fa-bars"></i></a>
+			<div class="padding-top-40">
+				<h2><strong>CampRay公告牌</strong></h2>
+			</div>
 		</div>
+		
 	</div>
 	<!-- Header END -->
 	<div class="main">

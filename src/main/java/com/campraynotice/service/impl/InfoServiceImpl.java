@@ -24,7 +24,9 @@ public class InfoServiceImpl implements InfoService{
 	
 	public PagingData loadPagingData(DataTableParamter dtp) {
 		// TODO Auto-generated method stub
-		return infoDao.findPage(dtp.getiDisplayStart(), dtp.getiDisplayLength());
+		
+		return infoDao.findPage("sort", true, dtp.getiDisplayStart(), dtp.getiDisplayLength());
+		
 	}
 
 	public void createInfo(Info info) {
@@ -49,7 +51,7 @@ public class InfoServiceImpl implements InfoService{
 
 	public List<Info> getInfoList() {
 		// TODO Auto-generated method stub
-		return infoDao.LoadAll();
+		return infoDao.getAll("sort", true);
 	}
 
 }

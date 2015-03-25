@@ -12,7 +12,7 @@
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>EDIT</title>
+<title>设置</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -25,8 +25,10 @@
 <link href="../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
-<link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
-<link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link href="../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css" />
 <!-- BEGIN THEME STYLES -->
 <link href="../assets/global/css/components.css" rel="stylesheet" type="text/css"/>
 <link href="../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
@@ -58,80 +60,42 @@
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
 		<div class="page-content">
-			<!-- BEGIN PAGE CONTENT-->
-			<div class="row">
-				<div class="col-md-12">
-					<!-- BEGIN VALIDATION STATES-->
-					<div class="portlet box green">
-						<div class="portlet-title">
-							<div class="caption">
-								<i class="fa fa-gift">编辑</i>
-							</div>
-							
-						</div>
-						<div class="portlet-body form">
-							<!-- BEGIN FORM-->
-							<form:form action="info_edit" id="form" class="form-horizontal" method="post" commandName="info">
-								<div class="form-body">
-								   <div class="form-group">
-										<div class="col-md-4">
-											<form:input type="text" path="id" data-required="1" class="form-control hidden"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-2">Title <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-4">
-											<form:input type="text" path="title" data-required="1" class="form-control"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-2">Sort <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-2">
-											<form:select path="sort" class="form-control">
-												<form:option value="0">0</form:option>
-												<form:option value="1">1</form:option>
-												<form:option value="2">2</form:option>
-												<form:option value="3">3</form:option>
-												<form:option value="4">4</form:option>
-												<form:option value="5">5</form:option>
-												<form:option value="6">6</form:option>
-												<form:option value="7">7</form:option>
-												<form:option value="8">8</form:option>
-												<form:option value="9">9</form:option>
-											</form:select>
-										</div>
-									</div>
-									<div class="form-group last">
-										<label class="control-label col-md-2">Content <span class="required">
-										* </span>
-										</label>
-										<div class="col-md-9">
-											<form:textarea class="ckeditor form-control" path="content" rows="6" data-error-container="#editor_error"></form:textarea>
-											<div id="editor_error">
-											
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-actions">
-									<div class="row">
-										<div class="col-md-offset-3 col-md-9">
-											<button type="submit" class="btn green">提交</button>
-											<a href="javascript:history.go(-1)" class="btn default">返回</a>
-										</div>
-									</div>
-								</div>
-							</form:form>
-							<!-- END FORM-->
-						</div>
-						<!-- END VALIDATION STATES-->
+		    <div class="page-bar">
+		   </div>
+		    <div class="row">
+					<div class="col-md-12">
+						<button id="enable" class="btn blue">编辑/不可编辑</button>
+						<hr>
 					</div>
 				</div>
-			</div>
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+					<div class="col-md-12">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+						<div class="portlet box green">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-edit"></i>设置
+								</div>
+								
+							</div>							
+							<div class="portlet-body">																
+								<table id="setting" class="table table-bordered table-striped">
+									<tbody>
+										<tr>
+											<td style="width: 15%">标题</td>
+											<td style="width: 50%"><a href="#" id="title"
+												data-type="text" data-pk="1"
+												data-original-title="输入首页标题"> ${settings['title']} </a></td>
+											</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- END EXAMPLE TABLE PORTLET-->
+					</div>
+				</div>
+				
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
@@ -159,19 +123,25 @@
 <script src="../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="../assets/global/plugins/ckeditor/ckeditor.js"></script>
+<script src="../assets/global/plugins/datatables/media/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
+
 <!-- END CORE PLUGINS -->
 <script src="../assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script type="text/javascript" src="../assets/global/plugins/bootstrap-editable/bootstrap-editable/js/bootstrap-editable.js"></script>
+<script src="../static/js/settingTableData.js" type="text/javascript"></script>
 <script>
       jQuery(document).ready(function() {    
       Metronic.init(); // init metronic core components
       Layout.init(); // init current layout
      QuickSidebar.init(); // init quick sidebar
      Demo.init(); // init demo features
-     
+      SettingTable.init("<c:url value="/"/>");
       });
    </script>
 <!-- END JAVASCRIPTS -->

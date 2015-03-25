@@ -16,26 +16,19 @@
 					<!-- END SIDEBAR TOGGLER BUTTON -->
 				</li>
 				<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-			    
-				 <li class="start">
-					<a href="javascript:;">
-					<i class="icon-film"></i>
-					<span class="title">Dashbord</span>
-					<span class="selected"></span>
-					<span class="arrow open"></span>
-					</a>
-					<ul class="sub-menu">
-						<li class="active">
+                        <li>
 							<a href="${pageContext.request.contextPath}/dashbord">
 							<i class="icon-direction"></i>
-							Dashbord</a>
+							首页</a>
+						</li>
+						<li>
+							<a href="${pageContext.request.contextPath}/setting">
+							<i class="icon-direction"></i>
+							设置</a>
 						</li>
 						
 					</ul>
-				</li> 
 				
-				
-			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
 	</div>

@@ -48,6 +48,7 @@ var Table = function () {
                { title: ""},
                { title: "ID", data: "id"},
                { title: "标题", data: "title"},
+               { title: "排序", data: "sort"},
 	           { title: "内容",   data: "content" },
 	           { title: "创建时间",    render: function(data,type,row){
 	        	                  
