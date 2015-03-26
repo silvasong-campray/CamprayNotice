@@ -55,6 +55,7 @@ public class SettingController {
 				settingService.updateSetting(setting);
 				resp.put("info", "编辑成功");
 				resp.put("status", true);
+				settingService.cachedData();
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

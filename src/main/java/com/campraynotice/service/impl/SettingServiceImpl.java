@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.campraynotice.commons.SystemConfig;
 import com.campraynotice.dao.SettingDao;
 import com.campraynotice.dto.Setting;
 import com.campraynotice.service.SettingService;
@@ -33,6 +34,15 @@ public class SettingServiceImpl implements SettingService{
 	public void updateSetting(Setting setting) {
 		// TODO Auto-generated method stub
 		settingDao.update(setting);
+	}
+
+	public void cachedData() {
+		// TODO Auto-generated method stub
+		SystemConfig.setting.clear();
+		List<Setting> list = settingDao.LoadAll();
+		for(Setting setting : list){
+			SystemConfig.setting.put(setting.getName(),setting.getValue());
+		}
 	}
 
 }

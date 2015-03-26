@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.campraynotice.commons.SystemConfig;
 import com.campraynotice.dto.Info;
 import com.campraynotice.service.InfoService;
 
@@ -87,6 +88,16 @@ public class CommonController extends BaseController {
 		}
 		mav.addObject("infoMap", infoMap);
 		mav.setViewName("common/indexContent");
+		return mav;
+	}
+	
+	@RequestMapping(value="index_header",method=RequestMethod.GET)
+	public ModelAndView indexHeader(HttpServletRequest request){
+		ModelAndView mav = new ModelAndView();
+		Map <String,String> setting = new LinkedHashMap<String, String>();
+		setting = SystemConfig.setting;
+		mav.addObject("setting", setting);
+		mav.setViewName("common/index_header");
 		return mav;
 	}
 }

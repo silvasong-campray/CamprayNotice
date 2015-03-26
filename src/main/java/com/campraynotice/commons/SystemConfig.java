@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class SystemConfig {
 	
-	public static Map<String, Map<String,List<String>>> suningCategory = new LinkedHashMap<String, Map<String,List<String>>>(); 
+	public static Map<String, String> setting = new LinkedHashMap<String, String>();
 	
 	
 	

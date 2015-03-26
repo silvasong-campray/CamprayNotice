@@ -14,5 +14,6 @@
 	
 	<bean id="settingService" class="com.campraynotice.service.impl.SettingServiceImpl" autowire="byName"></bean>
 	
+	<bean class="com.campraynotice.core.CachedDataProcessor"/>
     
 </beans>

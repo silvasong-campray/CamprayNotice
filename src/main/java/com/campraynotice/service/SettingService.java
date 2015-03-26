@@ -16,5 +16,7 @@ public interface SettingService {
 	Setting getSettingByPropority(String name);
 	
 	void updateSetting(Setting setting);
+	
+	void cachedData();
 
 }

@@ -12,6 +12,8 @@ package com.campraynotice.core;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
+import com.campraynotice.service.SettingService;
+
 
 /** 
  * <p>Sping容器初始化完成后的缓存甚而数据的处理方法</p>
@@ -24,7 +26,8 @@ public class CachedDataProcessor implements ApplicationListener<ContextRefreshed
     public void onApplicationEvent(ContextRefreshedEvent event) {
 		//root application context
     	if(event.getApplicationContext().getParent() == null){
-    		
+    		SettingService settingService = (SettingService)event.getApplicationContext().getBean("settingService");
+    		settingService.cachedData();
     	}
     	else{//projectName-servlet  context
     		
